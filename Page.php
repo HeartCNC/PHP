@@ -11,7 +11,7 @@
     class Page{
 		var $now = 1;    //当前页面
 		var $all = 0;    //数据总数
-		var $each = 20;    
+		var $each = 20;   // 
 		var $allpage;
 		var $disnum = 5;
 		function pagedate($now,$all,$each,$ellipsis=true){
