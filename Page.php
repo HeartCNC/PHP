@@ -50,3 +50,29 @@
 		}
 	}
 ?>
+<?php
+/* 对象名：Page
+ * 成员函数：
+ *   @ pagedate
+ *   @param $now 当前页码
+ *   @param $all 数据总数
+ *   @param $each 每页显示数
+ *   @return $arr 页标数组
+ */
+    class C_Page{
+		var $now = 1;    //当前页面
+		var $all = 0;    //数据总数
+		var $each = 20;  //每页数据数
+		var $allpage;    //总页数
+		var $disnum = 5; //页标显示个数
+		
+		function pagedate($now,$all,$each){
+			$this->allpage = ceil($all/$each);
+			$arr = array();
+			for($i=1;$i<=$this->allpage;$i++){
+				array_push($arr,$i);
+			}
+			return $arr;
+		}
+	}
+?>
