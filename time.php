@@ -3,6 +3,7 @@
 		var $nowTimeStr;  //当前时间字符串
 		var $nowTimeStamp;  //当前时间戳
 		function init(){
+			date_default_timezone_set('PRC');
 			$this->nowTimeStr = date("Y-m-d H:i:s");
 			$this->nowTimeStamp = time();
 		}
