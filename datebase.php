@@ -6,16 +6,16 @@
 		var $DB_PASSWORD = "root";
 		var $DB_NAME = "db";
 		
-		//连接数据库
-		function connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME){
+		//设置数据库头
+		function setHeader($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME){
 			$this->DB_HOST = $DB_HOST;
 			$this->DB_USER = $DB_USER;
 			$this->DB_PASSWORD = $DB_PASSWORD;
 			$this->DB_NAME = $DB_NAME;
-			if( $conn = mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME) ){
-				return $conn;
-			}
-			return false;
+		}
+		//连接数据库
+		function connect(){
+			return $conn = mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME);
 		}
 		//关闭数据库
 		function close($conn){
