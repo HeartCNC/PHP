@@ -173,11 +173,15 @@
 		}
 		//记录条数
 		function countData($table,$key,$where=""){
-			$sql = "select count({$key}) from {$table}";
-			if($where != ""){
-				$sql .= " where {$where}";
+			$num = 0;
+			if( $con = $this->connect() ){
+				$sql = "select {$key} from {$table}";
+				if($where != ""){
+					$sql .= " where {$where}";
+				}
+				$res = mysqli_query($con,$sql);
+				$num = $res->num_rows;
 			}
-			$num = array_pop( $this->queryData($sql)[0] );
 			return intval($num);
 		}
 	}
